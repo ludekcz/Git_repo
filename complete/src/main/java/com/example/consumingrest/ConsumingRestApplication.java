@@ -9,8 +9,10 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+
 @SpringBootApplication
 public class ConsumingRestApplication {
+
 
 	private static final Logger log = LoggerFactory.getLogger(ConsumingRestApplication.class);
 
@@ -27,7 +29,7 @@ public class ConsumingRestApplication {
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
 			Quote quote = restTemplate.getForObject(
-					"http://localhost:8080/api/random", Quote.class);
+					"http://localhost:8072/api/random", Quote.class);
 			log.info(quote.toString()); //Dobrý den
 		};
 	}

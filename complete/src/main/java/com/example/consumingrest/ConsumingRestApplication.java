@@ -28,7 +28,7 @@ public class ConsumingRestApplication {
 		return args -> {
 			Quote quote = restTemplate.getForObject(
 					"http://localhost:8080/api/random", Quote.class);
-			log.info(quote.toString());
+			log.info(quote.toString()); //Dobrý den
 		};
 	}
 }
